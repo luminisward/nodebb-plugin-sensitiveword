@@ -12,7 +12,19 @@
       "method": "addAdminNavigation"
     },
     {
+      "hook": "filter:topic.create",
+      "method": "checkTopicContent"
+    },
+    {
+      "hook": "filter:topic.edit",
+      "method": "checkTopicContent"
+    },
+    {
       "hook": "filter:post.create",
+      "method": "checkPostContent"
+    },
+    {
+      "hook": "filter:post.edit",
       "method": "checkPostContent"
     }
   ],

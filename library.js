@@ -36,6 +36,16 @@ plugin.addAdminNavigation = async (header) => {
   return header;
 };
 
+plugin.checkTopicContent = async (data) => {
+  const checkResultList = await Promise.all([check(data.data.title), check(data.data.content)]);
+  const pass = checkResultList.map(result => result.pass).reduce((x, y) => x && y, true);
+  if (pass) {
+    return data;
+  }
+  const word = checkResultList.map(result => result.wrods).flat()[0];
+  throw new Error(`包含敏感词: ${word}`);
+};
+
 plugin.checkPostContent = async (data) => {
   const checkResult = await check(data.post.content);
   if (checkResult.pass) {
