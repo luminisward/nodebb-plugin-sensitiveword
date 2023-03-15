@@ -1,31 +1,19 @@
 {
   "name": "nodebb-plugin-sensitiveword",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": {
     "name": "luminisward",
     "email": "luminisward@vip.qq.com"
   },
   "description": "A NodeBB Plugin that prevent to create a post while the post text contains specific words.",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "keywords": [
     "nodebb",
     "plugin"
   ],
   "license": "MIT",
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "main": "library.js",
   "nbbpm": {
-    "compatibility": "^1.13.0"
+    "compatibility": "^2.0.0"
   },
   "homepage": "https://github.com/luminisward/nodebb-plugin-sensitiveword#readme",
   "repository": {
@@ -38,8 +26,6 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "husky": "^2.4.0",
-    "lint-staged": "^8.2.0"
+    "eslint-plugin-import": "^2.8.0"
   }
 }
